@@ -1,3 +1,8 @@
-import { handleActions } from 'redux-actions';
+import { combineReducers } from 'redux';
 
-export default handleActions({}, {});
+import leaderboardReducer from './reducers/leaderboardReducer';
+
+export default combineReducers({
+    leaderboard: leaderboardReducer
+});
+
