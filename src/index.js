@@ -28,7 +28,7 @@ firebase.initializeApp(config);
 const initialState = {};
 
 const createStoreWithFirebase = compose(
-    reactReduxFirebase(firebase, {}),
+    reactReduxFirebase(firebase, {userProfile: 'users',}),
     includeDevTools()
 )(createStore);
 

@@ -10,7 +10,6 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                {this.props.api}
                 <Route path='/' exact component={Leaderboard} />
                 <Route path='/start' exact component={Start} />
                 <Route path='/game' exact component={Game} />

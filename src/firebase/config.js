@@ -1,8 +1,8 @@
 export default {
-    apiKey: "AIzaSyAa0I6z7tLDMMtYx9SnR3PNINXT0czmeh0",
-    authDomain: "frontend-logo-quiz.firebaseapp.com",
-    databaseURL: "https://frontend-logo-quiz.firebaseio.com",
-    projectId: "frontend-logo-quiz",
+    apiKey: "AIzaSyCaJTNq1YDAp4GJ-z1-ZJ-sX8VgNmBbeUM",
+    authDomain: "frontend-logo-quiz-2018.firebaseapp.com",
+    databaseURL: "https://frontend-logo-quiz-2018.firebaseio.com",
+    projectId: "frontend-logo-quiz-2018",
     storageBucket: "",
-    messagingSenderId: "349628808944"
+    messagingSenderId: "653914015825"
 }
