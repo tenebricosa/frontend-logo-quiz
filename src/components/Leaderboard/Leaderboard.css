@@ -2,14 +2,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 2em 0;
 }
 
 .table {
-    width: 800px;
+
 }
 
 .table-header {
     display: flex;
     justify-content: space-between;
-    font-size: 2em;
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+.table-item {
+    width: 250px;
+}
+
+.table-item:first-of-type {
+    width: 100px;
+}
+
+.new-start {
+    margin-top: 10em;
 }
