@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux';
-
-import leaderboardReducer from './reducers/leaderboardReducer';
+import { firebaseReducer } from 'react-redux-firebase';
 
 export default combineReducers({
-    leaderboard: leaderboardReducer
+    firebase: firebaseReducer
 });
-

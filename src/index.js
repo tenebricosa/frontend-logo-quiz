@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, compose } from 'redux';
+import { reactReduxFirebase } from 'react-redux-firebase';
 import { Provider } from 'react-redux';
-import rootReducer from './reducer';
-import createSagaMiddleware from 'redux-saga';
-import { rootSaga } from './sagas';
+import reducer from './reducer';
 import { init } from './actions';
 import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase';
-
-import { FrontendLogoQuizApi } from "./frontendLogoQuizApi/FrontendLogoQuizApi";
 
 import './index.css';
 import App from './App';
@@ -26,22 +23,16 @@ const includeDevTools = () => {
     return f => f;
 };
 
+firebase.initializeApp(config);
+
 const initialState = {};
 
-const sagaMiddleware = createSagaMiddleware();
+const createStoreWithFirebase = compose(
+    reactReduxFirebase(firebase, {}),
+    includeDevTools()
+)(createStore);
 
-const store = createStore(
-    rootReducer,
-    initialState,
-    compose(
-        applyMiddleware(sagaMiddleware),
-        includeDevTools()
-    )
-);
-
-sagaMiddleware.run(rootSaga);
-store.dispatch(init());
-firebase.initializeApp(config);
+const store = createStoreWithFirebase(reducer, initialState);
 
 ReactDOM.render(
     <Provider store={store}>
