@@ -2,7 +2,7 @@ import { handleActions } from "redux-actions";
 import * as types from "../actionTypes";
 
 export default handleActions({
-    [types.FETCH_LEADERBOARD_SUCCESS]: (state, { payload }) => ({
+    [types.USER_NAME_CHANGE]: (state, { payload }) => ({
         ...state,
         ...payload
     })

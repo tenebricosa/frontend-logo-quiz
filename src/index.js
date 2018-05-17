@@ -25,7 +25,12 @@ const includeDevTools = () => {
 
 firebase.initializeApp(config);
 
-const initialState = {};
+const initialState = {
+    currentUser: {
+        name: "",
+        email: ""
+    }
+};
 
 const createStoreWithFirebase = compose(
     reactReduxFirebase(firebase, {userProfile: 'users',}),
